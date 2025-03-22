@@ -1,0 +1,188 @@
+{
+  "name": "fe-helper-plus",
+  "displayName": "FeHelperPlus",
+  "description": "FeHelperPlus (json2ts, json2excel, etc.)",
+  "icon": "./public/images/logo.png",
+  "publisher": "Allen-He",
+  "homepage": " https://github.com/Allen-He/fe-helper-plus/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Allen-He/fe-helper-plus.git"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "enabledApiProposals": [
+    "contribEditorContentMenu"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "feHelperPlus.json2ts.camelizeKeys",
+        "title": "json -> ts (camelizeKeys)",
+        "category": "feHelperPlus"
+      },
+      {
+        "command": "feHelperPlus.json2ts.decamelizeKeys",
+        "title": "json -> ts (decamelizeKeys)",
+        "category": "feHelperPlus"
+      },
+      {
+        "command": "feHelperPlus.json2ts.camelizeKeys.clipboard",
+        "title": "json -> ts (camelizeKeys - from clipboard)",
+        "category": "feHelperPlus"
+      },
+      {
+        "command": "feHelperPlus.json2ts.decamelizeKeys.clipboard",
+        "title": "json -> ts (decamelizeKeys - from clipboard)",
+        "category": "feHelperPlus"
+      },
+      {
+        "command": "feHelperPlus.json2excel.forward",
+        "title": "json -> excel (eg: Convert multilingual JSON file to Excel file)",
+        "category": "feHelperPlus"
+      },
+      {
+        "command": "feHelperPlus.json2excel.reverse",
+        "title": "excel -> json (eg: Convert Excel file to multilingual JSON file)",
+        "category": "feHelperPlus"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "feHelperPlus.json2ts.camelizeKeys",
+        "when": "editorTextFocus",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c"
+      },
+      {
+        "command": "feHelperPlus.json2ts.decamelizeKeys",
+        "when": "editorTextFocus",
+        "key": "ctrl+shift+d",
+        "mac": "cmd+shift+d"
+      },
+      {
+        "command": "feHelperPlus.json2ts.camelizeKeys.clipboard",
+        "when": "editorTextFocus",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v"
+      },
+      {
+        "command": "feHelperPlus.json2ts.decamelizeKeys.clipboard",
+        "when": "editorTextFocus",
+        "key": "ctrl+shift+f",
+        "mac": "cmd+shift+f"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "feHelperPlus.editorAction",
+          "group": "navigation"
+        }
+      ],
+      "feHelperPlus.editorAction": [
+        {
+          "command": "feHelperPlus.json2ts.camelizeKeys",
+          "group": "feHelperPlus@1"
+        },
+        {
+          "command": "feHelperPlus.json2ts.decamelizeKeys",
+          "group": "feHelperPlus@2"
+        },
+        {
+          "command": "feHelperPlus.json2ts.camelizeKeys.clipboard",
+          "group": "feHelperPlus@3"
+        },
+        {
+          "command": "feHelperPlus.json2ts.decamelizeKeys.clipboard",
+          "group": "feHelperPlus@4"
+        }
+      ],
+      "explorer/context": [
+        {
+          "submenu": "feHelperPlus.explorerAction",
+          "group": "navigation"
+        }
+      ],
+      "feHelperPlus.explorerAction": [
+        {
+          "command": "feHelperPlus.json2excel.forward",
+          "group": "feHelperPlus@1"
+        },
+        {
+          "command": "feHelperPlus.json2excel.reverse",
+          "group": "feHelperPlus@2"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "feHelperPlus.editorAction",
+        "label": "FeHelperPlus"
+      },
+      {
+        "id": "feHelperPlus.explorerAction",
+        "label": "FeHelperPlus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "build": "pnpm vsce package --no-dependencies",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "release": "release-it",
+    "release-major": "pnpm release major",
+    "release-minor": "pnpm release minor",
+    "release-patch": "pnpm release patch"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^10.0.0",
+    "@types/copy-paste": "^1.1.33",
+    "@types/humps": "^2.0.6",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "~20.17.25",
+    "@types/uuid": "^10.0.0",
+    "@types/vscode": "^1.98.0",
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
+    "@typescript-eslint/parser": "^8.27.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^3.3.0",
+    "eslint": "^9.23.0",
+    "release-it": "^18.1.2",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "copy-paste": "^1.5.3",
+    "flat": "^6.0.1",
+    "humps": "^2.0.1",
+    "json-to-ts": "^2.1.0",
+    "uuid": "^10.0.0",
+    "xlsx": "file:vendor/xlsx-0.20.3.tgz"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "json-to-ts@2.1.0": "patches/json-to-ts@2.1.0.patch"
+    }
+  }
+}
