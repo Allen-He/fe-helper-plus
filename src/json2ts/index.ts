@@ -4,7 +4,7 @@ import { window, commands } from 'vscode';
 import * as copyPaste from "copy-paste";
 import * as humps from 'humps';
 import JsonToTS from 'json-to-ts';
-import { $message, writeAtTempWindow } from '../utils/helper';
+import { writeAtTempWindow } from '../utils/helper';
 
 function json2tsCommandHandle(humpsMode: 'camelizeKeys' | 'decamelizeKeys', source: 'selection' | 'clipboard') {
   return () => {
@@ -18,17 +18,17 @@ function json2tsCommandHandle(humpsMode: 'camelizeKeys' | 'decamelizeKeys', sour
       sourceText = document.getText(selection).trim();
     
       if (!sourceText.length) {
-        return $message.error('Please select the JSON content that needs to be converted first.');
+        return window.showErrorMessage('Please select the JSON content that needs to be converted first.');
       }
     } else {
       try {
         sourceText = copyPaste.paste();
       } catch (error: any) {
-        return $message.error(`An error occurred while accessing the system clipboard. ${error.message}`);
+        return window.showErrorMessage(`An error occurred while accessing the system clipboard. ${error.message}`);
       }
 
       if (!sourceText.length) {
-        return $message.error('Please copy the JSON content that needs to be converted first.');
+        return window.showErrorMessage('Please copy the JSON content that needs to be converted first.');
       }
     }
     
@@ -36,7 +36,7 @@ function json2tsCommandHandle(humpsMode: 'camelizeKeys' | 'decamelizeKeys', sour
     try {
       resJson = JSON.parse(sourceText);
     } catch (error) {
-      return $message.error('The currently selected content is not a valid JSON.');
+      return window.showErrorMessage('The currently selected content is not a valid JSON.');
     }
     resJson = humps[humpsMode](resJson);
   
@@ -44,7 +44,7 @@ function json2tsCommandHandle(humpsMode: 'camelizeKeys' | 'decamelizeKeys', sour
     try {
       resTs = JsonToTS(resJson).reduce((a, b) => `${a}\n\n${b}`);
     } catch (error: any) {
-      return $message.error(error.message);
+      return window.showErrorMessage(error.message);
     }
   
     writeAtTempWindow(resTs);

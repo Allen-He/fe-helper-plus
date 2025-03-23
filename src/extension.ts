@@ -3,6 +3,7 @@
 import type { ExtensionContext } from 'vscode';
 import { activate as json2tsActivate, deactivate as json2tsDeactivate } from './json2ts';
 import { activate as json2excelActivate, deactivate as json2excelDeactivate } from './json2excel';
+import { activate as recommendationsActivate, deactivate as recommendationsDeactivate } from './recommendations';
 
 
 // This method is called when your extension is activated
@@ -10,10 +11,12 @@ import { activate as json2excelActivate, deactivate as json2excelDeactivate } fr
 export function activate(context: ExtensionContext) {
   json2tsActivate(context);
   json2excelActivate(context);
+  recommendationsActivate(context);
 }
 
 // This method is called when your extension is deactivated
 export function deactivate() {
 	json2tsDeactivate();
   json2excelDeactivate();
+  recommendationsDeactivate();
 }

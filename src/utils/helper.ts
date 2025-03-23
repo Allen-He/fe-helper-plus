@@ -24,15 +24,7 @@ export async function writeAtTempWindow(text: string) {
   });
 }
 
-export const $message = {
-  _getResMsg(message: string) {
-    const userName = os.userInfo().username;
-    return `Hi, ${userName}. ${message}`;
-  },
-  error(message: string) {
-    window.showErrorMessage(this._getResMsg(message)); 
-  },
-  info(message: string) {
-    window.showInformationMessage(this._getResMsg(message));
-  }
+export const getMsg = (message: string) => {
+  const userName = os.userInfo().username;
+  return `Hi, ${userName}. ${message}`;
 };

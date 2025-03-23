@@ -1,5 +1,5 @@
 import type { ExtensionContext, Uri } from 'vscode';
-import { commands } from 'vscode';
+import { commands, window } from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
 // @ts-ignore
@@ -7,7 +7,6 @@ import * as XLSX from 'xlsx';
 // @ts-ignore
 import * as flat from 'flat';
 import { v4 as uuidv4 } from 'uuid';
-import { $message } from '../utils/helper';
 
 type RecordObj = Record<string, any>;
 
@@ -79,7 +78,7 @@ function transJsonAndExcel(curPath: string, type: TransType) {
       XLSX.utils.sheet_add_aoa(ws, [["JSON KEY", "JSON VALUE"]], { origin: "A1" });
       XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
       XLSX.writeFileXLSX(wb, outputPath);
-      $message.info(`The Excel file has been generated, please refer to: ${outputName}`);
+      window.showInformationMessage(`The Excel file has been generated, please refer to: ${outputName}`);
     } else {
       const wb = XLSX.readFile(curPath);
       const ws = wb.Sheets[wb.SheetNames[0]];
@@ -88,10 +87,10 @@ function transJsonAndExcel(curPath: string, type: TransType) {
       const jsonData = excelData.reduce((prev, [key, value]) => ({ ...prev, [key]: value }), {});
       const jsonText = JSON.stringify(flat.unflatten(jsonData), null, 2);
       fs.writeFileSync(outputPath, jsonText, { encoding: 'utf-8' });
-      $message.info(`The JSON file has been generated, please refer to: ${outputName}`);
+      window.showInformationMessage(`The JSON file has been generated, please refer to: ${outputName}`);
     }
   } catch (error: any) {
-    $message.error(error.message);
+    window.showErrorMessage(error.message);
   }
 }
 
@@ -101,12 +100,12 @@ function json2excelCommandHandle(type: TransType = 'forward') {
       const pathList = getTarPathList(uri.path, type === 'forward' ? EnumExtName.JSON : EnumExtName.EXCEL);
 
       if (pathList.length === 0) {
-        $message.error('No files of the required type were found');
+        window.showErrorMessage('No files of the required type were found');
         return;
       }
       pathList.forEach(curPath => transJsonAndExcel(curPath, type));
     } catch (error: any) {
-      $message.error(error.message);
+      window.showErrorMessage(error.message);
     }
   };
 }

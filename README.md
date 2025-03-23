@@ -34,6 +34,20 @@ This is the README for vscode extension "FeHelperPlus".
 
 ![json2excel](https://p9-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/7984d40520eb43568836e42fb4a32658~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg57un57ut5Yqq5Yqb5bCx5aW9:q75.awebp?rk3s=f64ab15b&x-expires=1743261787&x-signature=QpHId4jt22rwfeSwn6cLsgLx79g%3D)
 
+### One-Click Installation of Essential VS Code Extensions for Front-End Development
+
+#### Introduction
+1. One-click installation of essential VS Code extensions for front-end development.
+2. Supports custom selection of extensions to install.
+3. Automatically skips extensions that are already installed during installation.
+
+#### Usage
+1. Supported by right-click menu or shortcut key activation.
+
+![install](https://p3-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/b4288572d7be4994b7fc4e1fe46a1e71~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg57un57ut5Yqq5Yqb5bCx5aW9:q75.awebp?rk3s=f64ab15b&x-expires=1743312447&x-signature=oFdd3RqezyKRALy3X%2F27mp2mOwE%3D)
+
+![install](https://p3-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/2da532ad318448c882a795575a00ef35~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg57un57ut5Yqq5Yqb5bCx5aW9:q75.awebp?rk3s=f64ab15b&x-expires=1743312447&x-signature=eSYQjEHs8xNxZEDId3XCm9Hhmzs%3D)
+
 ### ...... (Stay tuned)
 
 ## Requirements
@@ -85,6 +99,20 @@ This extension contributes the following settings:
 1. 在编辑器的资源管理器中选择需要转换的 JSON 或 Excel 文件，右键唤起菜单并点击对应按钮，将自动生成对应的 Json 文件或 Excel 文件。主要使用场景是多语言 JSON 包与 Excel 文件之间的相互转换。如果选择的是文件夹，将批量转换其子层级中的 JSON 或 Excel 文件。
 
 ![json2excel](https://p9-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/7984d40520eb43568836e42fb4a32658~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg57un57ut5Yqq5Yqb5bCx5aW9:q75.awebp?rk3s=f64ab15b&x-expires=1743261787&x-signature=QpHId4jt22rwfeSwn6cLsgLx79g%3D)
+
+### 一键安装前端开发必备vscode插件
+
+#### 简介
+1. 一键安装前端开发必备vscode插件。
+2. 支持自定义选择需要安装的插件。
+3. 安装时会自动忽略已安装的插件。
+
+#### 使用方法
+1. 支持右键菜单或者快捷键唤起。
+
+![install](https://p3-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/b4288572d7be4994b7fc4e1fe46a1e71~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg57un57ut5Yqq5Yqb5bCx5aW9:q75.awebp?rk3s=f64ab15b&x-expires=1743312447&x-signature=oFdd3RqezyKRALy3X%2F27mp2mOwE%3D)
+
+![install](https://p3-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/2da532ad318448c882a795575a00ef35~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg57un57ut5Yqq5Yqb5bCx5aW9:q75.awebp?rk3s=f64ab15b&x-expires=1743312447&x-signature=eSYQjEHs8xNxZEDId3XCm9Hhmzs%3D)
 
 ### ......（敬请期待）
 

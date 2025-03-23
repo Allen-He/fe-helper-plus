@@ -1,7 +1,7 @@
 {
   "name": "fe-helper-plus",
   "displayName": "FeHelperPlus",
-  "description": "FeHelperPlus (json2ts, json2excel, etc.)",
+  "description": "FeHelperPlus (JSON to TS; JSON and Excel Conversion, One-Click Installation of Essential VS Code Extensions for Front-End Development, etc.)",
   "icon": "./public/images/logo.png",
   "publisher": "Allen-He",
   "homepage": " https://github.com/Allen-He/fe-helper-plus/blob/main/README.md",
@@ -55,6 +55,11 @@
         "command": "feHelperPlus.json2excel.reverse",
         "title": "excel -> json (eg: Convert Excel file to multilingual JSON file)",
         "category": "feHelperPlus"
+      },
+      {
+        "command": "feHelperPlus.installRecommendedPlugins",
+        "title": "Install Recommended Plugins",
+        "category": "feHelperPlus"
       }
     ],
     "keybindings": [
@@ -81,6 +86,11 @@
         "when": "editorTextFocus",
         "key": "ctrl+shift+f",
         "mac": "cmd+shift+f"
+      },
+      {
+        "command": "feHelperPlus.installRecommendedPlugins",
+        "key": "ctrl+shift+l",
+        "mac": "cmd+shift+l"
       }
     ],
     "menus": {
@@ -106,6 +116,10 @@
         {
           "command": "feHelperPlus.json2ts.decamelizeKeys.clipboard",
           "group": "feHelperPlus@4"
+        },
+        {
+          "command": "feHelperPlus.installRecommendedPlugins",
+          "group": "feHelperPlus@5"
         }
       ],
       "explorer/context": [
