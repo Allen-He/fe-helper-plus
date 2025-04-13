@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/Allen-He/fe-helper-plus/compare/0.1.2...0.1.3) (2025-04-13)
+
+
+### Features
+
+* 更名为"FE Helper Plus" ([179e20c](https://github.com/Allen-He/fe-helper-plus/commit/179e20cc099226e3d689d6e748b94645e3094bb7))
+
 ## [0.1.2](https://github.com/Allen-He/fe-helper-plus/compare/0.1.1...0.1.2) (2025-03-23)
 
 
