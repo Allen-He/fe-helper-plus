@@ -1,7 +1,7 @@
 {
   "name": "fe-helper-plus",
-  "displayName": "FeHelperPlus",
-  "description": "FeHelperPlus (JSON to TS; JSON and Excel Conversion, One-Click Installation of Essential VS Code Extensions for Front-End Development, etc.)",
+  "displayName": "FE Helper Plus",
+  "description": "FE Helper Plus (JSON to TS; JSON and Excel Conversion, One-Click Installation of Essential VS Code Extensions for Front-End Development, etc.)",
   "icon": "./public/images/logo.png",
   "publisher": "Allen-He",
   "homepage": " https://github.com/Allen-He/fe-helper-plus/blob/main/README.md",
@@ -142,11 +142,11 @@
     "submenus": [
       {
         "id": "feHelperPlus.editorAction",
-        "label": "FeHelperPlus"
+        "label": "FE Helper Plus"
       },
       {
         "id": "feHelperPlus.explorerAction",
-        "label": "FeHelperPlus"
+        "label": "FE Helper Plus"
       }
     ]
   },

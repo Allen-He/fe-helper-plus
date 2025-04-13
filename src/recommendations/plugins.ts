@@ -1,8 +1,8 @@
 export const recommendedPlugins = [
   {
     id: "Allen-He.fe-helper-plus",
-    displayName: "FeHelperPlus",
-    description: "FeHelperPlus (JSON to TS; JSON and Excel Conversion, One-Click Installation of Essential VS Code Extensions for Front-End Development, etc.)",
+    displayName: "FE Helper Plus",
+    description: "FE Helper Plus (JSON to TS; JSON and Excel Conversion, One-Click Installation of Essential VS Code Extensions for Front-End Development, etc.)",
   },
   {
     id: "amodio.tsl-problem-matcher",

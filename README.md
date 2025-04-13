@@ -1,6 +1,6 @@
-# FeHelperPlus README
+# FE Helper Plus README
 
-This is the README for vscode extension "FeHelperPlus".
+This is the README for vscode extension "FE Helper Plus".
 
 ## Features
 
@@ -64,9 +64,9 @@ This extension contributes the following settings:
 
 <br/>
 
-# FeHelperPlus README
+# FE Helper Plus README
 
-这是Vscode扩展“FeHelperPlus”的简介。
+这是Vscode扩展“FE Helper Plus”的简介。
 
 ## 功能
 
