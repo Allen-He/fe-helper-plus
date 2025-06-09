@@ -28,3 +28,8 @@ export const getMsg = (message: string) => {
   const userName = os.userInfo().username;
   return `Hi, ${userName}. ${message}`;
 };
+
+export const getExtensionConfig = <T>(key: string) => {
+  const feHelperPlusConfig = workspace.getConfiguration('fe-helper-plus');
+  return feHelperPlusConfig.get<T>(key);
+};

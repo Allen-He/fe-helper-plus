@@ -62,6 +62,32 @@
         "category": "feHelperPlus"
       }
     ],
+    "configuration": {
+      "type": "object",
+      "title": "FE Helper Plus",
+      "properties": {
+        "fe-helper-plus.json2ts.useAI": {
+          "type": "boolean",
+          "default": false,
+          "description": "json2ts: 是否开启AI转化"
+        },
+        "fe-helper-plus.openAI.baseUrl": {
+          "type": "string",
+          "default": "https://api.moonshot.cn/v1",
+          "description": "Open AI 接口 URL"
+        },
+        "fe-helper-plus.openAI.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Open AI 接口 密钥"
+        },
+        "fe-helper-plus.openAI.model": {
+          "type": "string",
+          "default": "moonshot-v1-8k",
+          "description": "Open AI 接口 模型"
+        }
+      }
+    },
     "keybindings": [
       {
         "command": "feHelperPlus.json2ts.camelizeKeys",
@@ -191,6 +217,7 @@
     "flat": "^6.0.1",
     "humps": "^2.0.1",
     "json-to-ts": "^2.1.0",
+    "openai": "^5.1.1",
     "uuid": "^10.0.0",
     "xlsx": "file:vendor/xlsx-0.20.3.tgz"
   },
