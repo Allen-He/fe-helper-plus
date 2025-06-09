@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/Allen-He/fe-helper-plus/compare/0.1.3...0.1.4) (2025-06-09)
+
+
+### Features
+
+* 升级json2ts功能-支持AI转换（默认关闭；默认使用Kimi大模型且支持自定义） ([1008722](https://github.com/Allen-He/fe-helper-plus/commit/1008722af72029fb09a025f7ba40f6576597ec53))
+
 ## [0.1.3](https://github.com/Allen-He/fe-helper-plus/compare/0.1.2...0.1.3) (2025-04-13)
 
 
