@@ -71,6 +71,11 @@
           "default": false,
           "description": "json2ts: 是否开启AI转化"
         },
+        "fe-helper-plus.json2ts.useStream": {
+          "type": "boolean",
+          "default": true,
+          "description": "json2ts: 开启AI转化后，是否使用stream流式输出"
+        },
         "fe-helper-plus.openAI.baseUrl": {
           "type": "string",
           "default": "https://api.moonshot.cn/v1",

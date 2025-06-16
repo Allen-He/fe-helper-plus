@@ -5,23 +5,32 @@ import { workspace, window, ViewColumn, Range } from 'vscode';
 let curEditor: TextEditor | null;
 let isOpened: boolean = false;
 
-export async function writeAtTempWindow(text: string) {
-  if (!isOpened) {
+export async function writeAtTempWindow(text: string, options?: { append: boolean }) {
+  const { append = false } = options || {};
+
+  if (!isOpened || !curEditor) {
     const document = await workspace.openTextDocument({ language: 'typescript', content: text });
     curEditor = await window.showTextDocument(document, ViewColumn.Beside, true);
     isOpened = true;
-  } else {
-    const fullRange = new Range(0, 0, curEditor!.document.lineCount, 0);
-    curEditor!.edit(editBuilder => editBuilder.replace(fullRange, text));
+  
+    const disposable = window.onDidChangeVisibleTextEditors(editors => {
+      if (!editors.includes(curEditor!)) {
+        curEditor = null;
+        isOpened = false;
+        disposable.dispose();
+      }
+    });
+    return;
   }
 
-  const disposable = window.onDidChangeVisibleTextEditors(editors => {
-    if (!editors.includes(curEditor!)) {
-      curEditor = null;
-      isOpened = false;
-      disposable.dispose();
-    }
-  });
+  if (append) {
+    const lastLine = curEditor.document.lineCount - 1;
+    const lastPosition = curEditor.document.lineAt(lastLine).range.end;
+    await curEditor.edit(editBuilder => editBuilder.insert(lastPosition, text));
+  } else {
+    const fullRange = new Range(0, 0, curEditor.document.lineCount, 0);
+    await curEditor.edit(editBuilder => editBuilder.replace(fullRange, text));
+  }
 }
 
 export const getMsg = (message: string) => {
