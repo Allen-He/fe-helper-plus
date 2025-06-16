@@ -124,6 +124,13 @@ VsCode 版本：大于等于 1.98.0
 
 本扩展提供了以下设置：
 
-- `feHelperPlus.enable`：启用/禁用此扩展。
+### Open AI 配置
+- `fe-helper-plus.openAI.baseUrl`：Open AI 接口 URL（默认使用Kimi大模型）
+- `fe-helper-plus.openAI.apiKey`：Open AI 接口 密钥
+- `fe-helper-plus.openAI.model`：Open AI 接口 模型
+
+### JSON 转 TS 配置
+- `fe-helper-plus.json2ts.useAI`：是否开启AI转化
+- `fe-helper-plus.json2ts.useStream`：开启AI转化后，是否使用stream流式输出
 
 **欢迎使用！**

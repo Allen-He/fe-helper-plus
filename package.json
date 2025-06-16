@@ -66,16 +66,6 @@
       "type": "object",
       "title": "FE Helper Plus",
       "properties": {
-        "fe-helper-plus.json2ts.useAI": {
-          "type": "boolean",
-          "default": false,
-          "description": "json2ts: 是否开启AI转化"
-        },
-        "fe-helper-plus.json2ts.useStream": {
-          "type": "boolean",
-          "default": true,
-          "description": "json2ts: 开启AI转化后，是否使用stream流式输出"
-        },
         "fe-helper-plus.openAI.baseUrl": {
           "type": "string",
           "default": "https://api.moonshot.cn/v1",
@@ -90,6 +80,16 @@
           "type": "string",
           "default": "moonshot-v1-8k",
           "description": "Open AI 接口 模型"
+        },
+        "fe-helper-plus.json2ts.useAI": {
+          "type": "boolean",
+          "default": false,
+          "description": "json2ts: 是否开启AI转化"
+        },
+        "fe-helper-plus.json2ts.useStream": {
+          "type": "boolean",
+          "default": true,
+          "description": "json2ts: 开启AI转化后，是否使用stream流式输出"
         }
       }
     },
