@@ -58,7 +58,14 @@ VsCode Version: Greater than or equal to 1.98.0
 
 This extension contributes the following settings:
 
-- `feHelperPlus.enable`: Enable/disable this extension.
+### Open AI Configuration
+- `fe-helper-plus.openAI.baseUrl`: Open AI API URL (KIMI model by default)
+- `fe-helper-plus.openAI.apiKey`: Open AI API Key
+- `fe-helper-plus.openAI.model`: Open AI Model Name
+
+### JSON to TS Configuration
+- `fe-helper-plus.json2ts.useAI`: Enable/disable AI-powered conversion
+- `fe-helper-plus.json2ts.useStream`: Enable/disable stream output when AI conversion is enabled
 
 **Enjoy!**
 
