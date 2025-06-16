@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/Allen-He/fe-helper-plus/compare/0.1.4...0.1.5) (2025-06-16)
+
+
+### Features
+
+* 升级json2ts功能-AI转换支持stream流式输出 ([546243d](https://github.com/Allen-He/fe-helper-plus/commit/546243d518105a29432501b858375a3c4fc9e689))
+
 ## [0.1.4](https://github.com/Allen-He/fe-helper-plus/compare/0.1.3...0.1.4) (2025-06-09)
 
 
